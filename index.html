@@ -1,0 +1,100 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Coding Tutorials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="css/style.css" media="all" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<script type="text/javascript" language="javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var theDaysBox  = $("#numdays");
+	var theHoursBox = $("#numhours");
+	var theMinsBox  = $("#nummins");
+	var theSecsBox  = $("#numsecs");
+	
+	var refreshId = setInterval(function() {
+	  var currentSeconds = theSecsBox.text();
+	  var currentMins    = theMinsBox.text();
+	  var currentHours   = theHoursBox.text();
+	  var currentDays    = theDaysBox.text();
+	  
+	  if(currentSeconds == 0 && currentMins == 0 && currentHours == 0 && currentDays == 0) {
+	  	// if everything rusn out our timer is done!!
+	  	// do some exciting code in here when your countdown timer finishes
+	  	
+	  } else if(currentSeconds == 0 && currentMins == 0 && currentHours == 0) {
+	  	// if the seconds and minutes and hours run out we subtract 1 day
+	  	theDaysBox.html(currentDays-1);
+	  	theHoursBox.html("23");
+	  	theMinsBox.html("59");
+	  	theSecsBox.html("59");
+	  } else if(currentSeconds == 0 && currentMins == 0) {
+	  	// if the seconds and minutes run out we need to subtract 1 hour
+	  	theHoursBox.html(currentHours-1);
+	  	theMinsBox.html("59");
+	  	theSecsBox.html("59");
+	  } else if(currentSeconds == 0) {
+	  	// if the seconds run out we need to subtract 1 minute
+	  	theMinsBox.html(currentMins-1);
+	  	theSecsBox.html("59");
+	  } else {
+      	theSecsBox.html(currentSeconds-1);
+      }
+   }, 1000);
+});
+</script>
+</head>
+<body>
+<div class="wrap">
+	<h1>Coding Tutorials</h1>
+<div class="main">
+	<h2>our website is on progressive</h2>
+	<div class="banner">
+		<img src="images/banner.png" alt="" />
+	</div>
+	<div class="text">
+		<h3>Will' be here soon with a new website,&nbsp;<span>Estimated time remaining...!</span></h3>
+		<div class	="clock-ticker" class="clearfix">
+			<div class="block">
+				<span class="flip-top" id="numdays">8</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Days</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="numhours">14</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Hours</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="nummins">34</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Mins</footer>
+			</div>
+			<div class="block">
+				<span class="flip-top" id="numsecs">9</span>
+				<span class="flip-btm"></span>
+				<footer class="label">Secs</footer>
+			</div>
+		</div>
+		<h3>
+		Our mission is to deliver Simply Easy Learning with clear, crisp, and to-the-point content on a wide range of subjects without any preconditions and impediments.We make sure every concept is explained with easy to understand examples.
+		</h3>
+	</div>
+	<div class="clear"></div>
+	<div class="content">
+	<div class="icons">
+		<p class="left"> &copy; 2021 | All rights reserved | Design by Kartik Krishna Sharma (Mody University,Laxmangarh)</p>
+	
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
+
